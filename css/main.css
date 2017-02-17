@@ -63,7 +63,7 @@ body {
   border-top: 2px solid black;
 }
 #wrapper #bodyContent {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background: black;
   display: flex;
@@ -96,6 +96,7 @@ body {
   position: relative;
   background: url("http://i.imgsafe.org/71f29dbf56.png");
   background-size: 100% 80%;
+  color: black;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(1) p.desc {
   width: calc(100% - 10px);
@@ -114,6 +115,7 @@ body {
   position: relative;
   background: url("http://i.imgsafe.org/7223f445ae.png");
   background-size: 100% 80%;
+  color: black;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(2) p.desc {
   width: calc(100% - 10px);
@@ -130,8 +132,9 @@ body {
   height: 230px;
   border: 2px inset skyblue;
   position: relative;
-  background: url("");
+  background: url("http://i.imgsafe.org/727f6786fb.png");
   background-size: 100% 80%;
+  color: black;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(3) p.desc {
   width: calc(100% - 10px);
@@ -148,8 +151,9 @@ body {
   height: 230px;
   border: 2px inset skyblue;
   position: relative;
-  background: url("");
+  background: url("http://i.imgsafe.org/743ae6e254.png");
   background-size: 100% 80%;
+  color: black;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(4) p.desc {
   width: calc(100% - 10px);
@@ -166,8 +170,9 @@ body {
   height: 230px;
   border: 2px inset skyblue;
   position: relative;
-  background: url("");
+  background: url("http://i.imgsafe.org/7445fbb149.png");
   background-size: 100% 80%;
+  color: black;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(5) p.desc {
   width: calc(100% - 10px);
@@ -184,8 +189,9 @@ body {
   height: 230px;
   border: 2px inset skyblue;
   position: relative;
-  background: url("");
+  background: url("http://i.imgsafe.org/744f64be9f.png");
   background-size: 100% 80%;
+  color: black;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(6) p.desc {
   width: calc(100% - 10px);
@@ -202,8 +208,9 @@ body {
   height: 230px;
   border: 2px inset skyblue;
   position: relative;
-  background: url("");
+  background: url("http://i.imgsafe.org/7459a0f321.png");
   background-size: 100% 80%;
+  color: black;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(7) p.desc {
   width: calc(100% - 10px);
@@ -220,8 +227,9 @@ body {
   height: 230px;
   border: 2px inset skyblue;
   position: relative;
-  background: url("");
+  background: url("http://i.imgsafe.org/74629c1f9f.png");
   background-size: 100% 80%;
+  color: black;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(8) p.desc {
   width: calc(100% - 10px);
@@ -238,8 +246,9 @@ body {
   height: 230px;
   border: 2px inset skyblue;
   position: relative;
-  background: url("");
+  background: url("http://i.imgsafe.org/7469507cf8.png");
   background-size: 100% 80%;
+  color: black;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(9) p.desc {
   width: calc(100% - 10px);
@@ -256,8 +265,9 @@ body {
   height: 230px;
   border: 2px inset skyblue;
   position: relative;
-  background: url("");
+  background: url("http://i.imgsafe.org/746cd9c05a.png");
   background-size: 100% 80%;
+  color: black;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(10) p.desc {
   width: calc(100% - 10px);
