@@ -1,3 +1,19 @@
+/*
+RGB(46,79,119) dark blue
+RGB(119,244,226) light blue green
+RGB(46,119,80) dark green
+RGB(119,79,46) brown 
+RGB(79,126,114) dark light green
+
+
+
+RGB(111,111,136) light purple
+RGB(136,246,246) light blue
+RGB(111,136,134) steel grey
+RGB(136,111,111) brown
+RGB(143,102,143) steel purple
+
+*/
 @import url("https://fonts.googleapis.com/css?family=Bahiana|Barrio|Open+Sans+Condensed:300|Oswald|Roboto|Sansita|Titillium+Web");
 body {
   overflow-x: hidden;
@@ -10,10 +26,11 @@ body {
 #wrapper #landing {
   width: 100%;
   height: 100vh;
-  background: url(http://i.imgsafe.org/5ed66de2ea.jpg);
+  background: url(http://i.imgsafe.org/5e6d523f9b.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position-y: -2vw;
   position: relative;
 }
 #wrapper #landing:after {
@@ -22,6 +39,7 @@ body {
   width: 100%;
   height: 100%;
   background: RGBA(77, 192, 181, 0.1);
+  pointer-events: none;
 }
 #wrapper #landing #name {
   position: absolute;
@@ -33,39 +51,37 @@ body {
   text-transform: uppercase;
   font-size: calc(7px + 4vw);
   text-align: center;
-  color: brown;
-  mix-blend-mode: difference;
+  color: RGBA(29, 28, 26, 1);
 }
-#wrapper #landing #tagline {
-  position: absolute;
-  font-family: "Bahiana";
-  font-size: calc(12px + 2.25vw);
+@media (min-width: 340px) and (max-width: 767px) {
+  #wrapper #landing #name {
+    text-shadow: none;
+  }
+}
+#wrapper #landing #name #tagline {
+  font-family: "Titillium Web";
+  font-size: calc(12px + 1.25vw);
   width: 100%;
   height: 50px;
-  isolation: isolate;
   text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: black;
-  padding-top: 10px;
-  font-weight: 700;
+  padding-top: 40px;
   letter-spacing: 2px;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9;
+  font-weight: 700;
+  line-height: 50px;
 }
-#wrapper #landing #tagline:before {
+#wrapper #landing #name #tagline:before {
   content: "";
   width: 40%;
-  height: 100%;
+  height: 40%;
   position: absolute;
-  top: 0%;
+  bottom: 0%;
   left: 30%;
   border-top: 2px solid black;
 }
 #wrapper #bodyContent {
   min-height: 100vh;
   width: 100%;
-  background: black;
+  background: RGBA(29, 28, 26, 1);
   display: flex;
   flex-flow: column;
 }
@@ -74,9 +90,11 @@ body {
   text-align: center;
   color: white;
   font-size: calc(10px + 2vw);
-  padding: 10px;
+  padding: 10px 10px 75px 10px;
   margin-top: 5%;
   text-transform: capitalize;
+  font-family: 'Oswald';
+  font-variant: small-caps;
 }
 #wrapper #bodyContent .innerBox {
   display: flex;
@@ -92,202 +110,513 @@ body {
   margin: 5px;
   width: 320px;
   height: 230px;
-  border: 2px inset skyblue;
+  border-top: 3px outset RGB(31, 137, 212);
+  border-left: 6px inset RGB(31, 137, 212);
+  border-right: 6px outset RGB(31, 137, 212);
+  border-bottom: 3px inset RGB(31, 137, 212);
   position: relative;
   background: url("http://i.imgsafe.org/71f29dbf56.png");
   background-size: 100% 80%;
   color: black;
+  font-family: "Roboto";
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(1):before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all .3s ease;
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(1):hover:before {
+  background: transparent;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(1) p.desc {
   width: calc(100% - 10px);
   height: calc(20% - 10px);
-  background: skyblue;
+  background: RGB(31, 137, 212);
   position: absolute;
   bottom: 0;
   padding: 5px;
+  justify-content: center;
   text-align: center;
+  box-shadow: inset 0 0 0 1px black;
+  color: whitesmoke;
+  font-size: calc(7px + .4vw);
+  display: flex;
+  align-items: center;
+  line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(2) {
   margin: 5px;
   width: 320px;
   height: 230px;
-  border: 2px inset skyblue;
+  border-top: 3px outset RGB(31, 137, 212);
+  border-left: 6px inset RGB(31, 137, 212);
+  border-right: 6px outset RGB(31, 137, 212);
+  border-bottom: 3px inset RGB(31, 137, 212);
   position: relative;
   background: url("http://i.imgsafe.org/7223f445ae.png");
   background-size: 100% 80%;
   color: black;
+  font-family: "Roboto";
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(2):before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all .3s ease;
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(2):hover:before {
+  background: transparent;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(2) p.desc {
   width: calc(100% - 10px);
   height: calc(20% - 10px);
-  background: skyblue;
+  background: RGB(31, 137, 212);
   position: absolute;
   bottom: 0;
   padding: 5px;
+  justify-content: center;
   text-align: center;
+  box-shadow: inset 0 0 0 1px black;
+  color: whitesmoke;
+  font-size: calc(7px + .4vw);
+  display: flex;
+  align-items: center;
+  line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(3) {
   margin: 5px;
   width: 320px;
   height: 230px;
-  border: 2px inset skyblue;
+  border-top: 3px outset RGB(31, 137, 212);
+  border-left: 6px inset RGB(31, 137, 212);
+  border-right: 6px outset RGB(31, 137, 212);
+  border-bottom: 3px inset RGB(31, 137, 212);
   position: relative;
   background: url("http://i.imgsafe.org/727f6786fb.png");
   background-size: 100% 80%;
   color: black;
+  font-family: "Roboto";
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(3):before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all .3s ease;
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(3):hover:before {
+  background: transparent;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(3) p.desc {
   width: calc(100% - 10px);
   height: calc(20% - 10px);
-  background: skyblue;
+  background: RGB(31, 137, 212);
   position: absolute;
   bottom: 0;
   padding: 5px;
+  justify-content: center;
   text-align: center;
+  box-shadow: inset 0 0 0 1px black;
+  color: whitesmoke;
+  font-size: calc(7px + .4vw);
+  display: flex;
+  align-items: center;
+  line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(4) {
   margin: 5px;
   width: 320px;
   height: 230px;
-  border: 2px inset skyblue;
+  border-top: 3px outset RGB(31, 137, 212);
+  border-left: 6px inset RGB(31, 137, 212);
+  border-right: 6px outset RGB(31, 137, 212);
+  border-bottom: 3px inset RGB(31, 137, 212);
   position: relative;
   background: url("http://i.imgsafe.org/743ae6e254.png");
   background-size: 100% 80%;
   color: black;
+  font-family: "Roboto";
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(4):before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all .3s ease;
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(4):hover:before {
+  background: transparent;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(4) p.desc {
   width: calc(100% - 10px);
   height: calc(20% - 10px);
-  background: skyblue;
+  background: RGB(31, 137, 212);
   position: absolute;
   bottom: 0;
   padding: 5px;
+  justify-content: center;
   text-align: center;
+  box-shadow: inset 0 0 0 1px black;
+  color: whitesmoke;
+  font-size: calc(7px + .4vw);
+  display: flex;
+  align-items: center;
+  line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(5) {
   margin: 5px;
   width: 320px;
   height: 230px;
-  border: 2px inset skyblue;
+  border-top: 3px outset RGB(31, 137, 212);
+  border-left: 6px inset RGB(31, 137, 212);
+  border-right: 6px outset RGB(31, 137, 212);
+  border-bottom: 3px inset RGB(31, 137, 212);
   position: relative;
   background: url("http://i.imgsafe.org/7445fbb149.png");
   background-size: 100% 80%;
   color: black;
+  font-family: "Roboto";
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(5):before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all .3s ease;
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(5):hover:before {
+  background: transparent;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(5) p.desc {
   width: calc(100% - 10px);
   height: calc(20% - 10px);
-  background: skyblue;
+  background: RGB(31, 137, 212);
   position: absolute;
   bottom: 0;
   padding: 5px;
+  justify-content: center;
   text-align: center;
+  box-shadow: inset 0 0 0 1px black;
+  color: whitesmoke;
+  font-size: calc(7px + .4vw);
+  display: flex;
+  align-items: center;
+  line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(6) {
   margin: 5px;
   width: 320px;
   height: 230px;
-  border: 2px inset skyblue;
+  border-top: 3px outset RGB(31, 137, 212);
+  border-left: 6px inset RGB(31, 137, 212);
+  border-right: 6px outset RGB(31, 137, 212);
+  border-bottom: 3px inset RGB(31, 137, 212);
   position: relative;
   background: url("http://i.imgsafe.org/744f64be9f.png");
   background-size: 100% 80%;
   color: black;
+  font-family: "Roboto";
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(6):before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all .3s ease;
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(6):hover:before {
+  background: transparent;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(6) p.desc {
   width: calc(100% - 10px);
   height: calc(20% - 10px);
-  background: skyblue;
+  background: RGB(31, 137, 212);
   position: absolute;
   bottom: 0;
   padding: 5px;
+  justify-content: center;
   text-align: center;
+  box-shadow: inset 0 0 0 1px black;
+  color: whitesmoke;
+  font-size: calc(7px + .4vw);
+  display: flex;
+  align-items: center;
+  line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(7) {
   margin: 5px;
   width: 320px;
   height: 230px;
-  border: 2px inset skyblue;
+  border-top: 3px outset RGB(31, 137, 212);
+  border-left: 6px inset RGB(31, 137, 212);
+  border-right: 6px outset RGB(31, 137, 212);
+  border-bottom: 3px inset RGB(31, 137, 212);
   position: relative;
   background: url("http://i.imgsafe.org/7459a0f321.png");
   background-size: 100% 80%;
   color: black;
+  font-family: "Roboto";
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(7):before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all .3s ease;
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(7):hover:before {
+  background: transparent;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(7) p.desc {
   width: calc(100% - 10px);
   height: calc(20% - 10px);
-  background: skyblue;
+  background: RGB(31, 137, 212);
   position: absolute;
   bottom: 0;
   padding: 5px;
+  justify-content: center;
   text-align: center;
+  box-shadow: inset 0 0 0 1px black;
+  color: whitesmoke;
+  font-size: calc(7px + .4vw);
+  display: flex;
+  align-items: center;
+  line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(8) {
   margin: 5px;
   width: 320px;
   height: 230px;
-  border: 2px inset skyblue;
+  border-top: 3px outset RGB(31, 137, 212);
+  border-left: 6px inset RGB(31, 137, 212);
+  border-right: 6px outset RGB(31, 137, 212);
+  border-bottom: 3px inset RGB(31, 137, 212);
   position: relative;
   background: url("http://i.imgsafe.org/74629c1f9f.png");
   background-size: 100% 80%;
   color: black;
+  font-family: "Roboto";
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(8):before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all .3s ease;
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(8):hover:before {
+  background: transparent;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(8) p.desc {
   width: calc(100% - 10px);
   height: calc(20% - 10px);
-  background: skyblue;
+  background: RGB(31, 137, 212);
   position: absolute;
   bottom: 0;
   padding: 5px;
+  justify-content: center;
   text-align: center;
+  box-shadow: inset 0 0 0 1px black;
+  color: whitesmoke;
+  font-size: calc(7px + .4vw);
+  display: flex;
+  align-items: center;
+  line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(9) {
   margin: 5px;
   width: 320px;
   height: 230px;
-  border: 2px inset skyblue;
+  border-top: 3px outset RGB(31, 137, 212);
+  border-left: 6px inset RGB(31, 137, 212);
+  border-right: 6px outset RGB(31, 137, 212);
+  border-bottom: 3px inset RGB(31, 137, 212);
   position: relative;
   background: url("http://i.imgsafe.org/7469507cf8.png");
   background-size: 100% 80%;
   color: black;
+  font-family: "Roboto";
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(9):before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all .3s ease;
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(9):hover:before {
+  background: transparent;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(9) p.desc {
   width: calc(100% - 10px);
   height: calc(20% - 10px);
-  background: skyblue;
+  background: RGB(31, 137, 212);
   position: absolute;
   bottom: 0;
   padding: 5px;
+  justify-content: center;
   text-align: center;
+  box-shadow: inset 0 0 0 1px black;
+  color: whitesmoke;
+  font-size: calc(7px + .4vw);
+  display: flex;
+  align-items: center;
+  line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(10) {
   margin: 5px;
   width: 320px;
   height: 230px;
-  border: 2px inset skyblue;
+  border-top: 3px outset RGB(31, 137, 212);
+  border-left: 6px inset RGB(31, 137, 212);
+  border-right: 6px outset RGB(31, 137, 212);
+  border-bottom: 3px inset RGB(31, 137, 212);
   position: relative;
   background: url("http://i.imgsafe.org/746cd9c05a.png");
   background-size: 100% 80%;
   color: black;
+  font-family: "Roboto";
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(10):before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all .3s ease;
+}
+#wrapper #bodyContent .innerBox a.pen:nth-child(10):hover:before {
+  background: transparent;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(10) p.desc {
   width: calc(100% - 10px);
   height: calc(20% - 10px);
-  background: skyblue;
+  background: RGB(31, 137, 212);
   position: absolute;
   bottom: 0;
   padding: 5px;
+  justify-content: center;
   text-align: center;
+  box-shadow: inset 0 0 0 1px black;
+  color: whitesmoke;
+  font-size: calc(7px + .4vw);
+  display: flex;
+  align-items: center;
+  line-height: 125%;
 }
-#wrapper #spacer {
-  height: 25vh;
-  width: 100%;
-  background: url(http://i.imgsafe.org/5ed66de2ea.jpg);
+#wrapper #bodyContent + .spacer {
+  background: url(http://i.imgsafe.org/5e6d523f9b.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position-y: -2vw;
+}
+#wrapper .spacer {
+  height: 25vh;
+  width: 100%;
 }
 #wrapper #footer {
   height: 25vh;
   width: 100%;
-  background: darkslategrey;
+  background: RGBA(72, 88, 106, 1);
+}
+#wrapper #footer #links {
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#wrapper #footer #links a.fa {
+  cursor: pointer;
+  width: 12.5%;
+  padding: 10px 0 10px 0;
+  font-size: calc(7px + 2vw);
+  text-align: center;
+  color: RGB(37, 166, 189);
+  border-radius: 10px;
+  text-shadow: 0 0 1px black;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px black, inset 0 0 0 1px black;
+  border: 6px solid RGBA(106, 105, 104, 1);
+  position: relative;
+  background: RGBA(72, 88, 106, 1);
+}
+#wrapper #footer #links a.fa:hover {
+  border-color: RGB(26, 27, 28);
+  box-shadow: none;
+}
+#wrapper #footer #links a.fa:hover:after {
+  top: calc(-50% - 12px);
+  opacity: 1;
+}
+#wrapper #footer #links a.fa:after {
+  content: "";
+  font-family: "Titillium Web";
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 0;
+  font-size: calc(7px + .15vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  line-height: 125%;
+  transition: top 0.25s cubic-bezier(0, 1.22, 1, 1.67), opacity 0.1s ease;
+}
+#wrapper #footer #links a:nth-child(1):after {
+  content: "Check out my CodePen";
+}
+#wrapper #footer #links a:nth-child(2):after {
+  content: "Browse my GitHub";
+}
+#wrapper #footer #links a:nth-child(3):after {
+  content: "Connect with me on LinkedIn";
+}
+#wrapper #footer #links a:nth-child(4):after {
+  content: "Follow me on Twitter";
+}
+#wrapper #footer + .spacer {
+  background: RGBA(29, 28, 26, 1);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
