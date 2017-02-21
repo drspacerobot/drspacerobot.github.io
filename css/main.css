@@ -31,6 +31,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position-y: -2vw;
+  background-position-x: center;
   position: relative;
 }
 #wrapper #landing:after {
@@ -91,7 +92,7 @@ body {
   color: white;
   font-size: calc(10px + 2vw);
   padding: 10px 10px 75px 10px;
-  margin-top: 5%;
+  margin-top: 2.5%;
   text-transform: capitalize;
   font-family: 'Oswald';
   font-variant: small-caps;
@@ -102,12 +103,12 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 80%;
   height: auto;
   margin: 0 auto;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(1) {
-  margin: 5px;
+  margin: 15px;
   width: 320px;
   height: 230px;
   border-top: 3px outset RGB(31, 137, 212);
@@ -150,7 +151,7 @@ body {
   line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(2) {
-  margin: 5px;
+  margin: 15px;
   width: 320px;
   height: 230px;
   border-top: 3px outset RGB(31, 137, 212);
@@ -193,7 +194,7 @@ body {
   line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(3) {
-  margin: 5px;
+  margin: 15px;
   width: 320px;
   height: 230px;
   border-top: 3px outset RGB(31, 137, 212);
@@ -236,7 +237,7 @@ body {
   line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(4) {
-  margin: 5px;
+  margin: 15px;
   width: 320px;
   height: 230px;
   border-top: 3px outset RGB(31, 137, 212);
@@ -279,7 +280,7 @@ body {
   line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(5) {
-  margin: 5px;
+  margin: 15px;
   width: 320px;
   height: 230px;
   border-top: 3px outset RGB(31, 137, 212);
@@ -322,7 +323,7 @@ body {
   line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(6) {
-  margin: 5px;
+  margin: 15px;
   width: 320px;
   height: 230px;
   border-top: 3px outset RGB(31, 137, 212);
@@ -365,7 +366,7 @@ body {
   line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(7) {
-  margin: 5px;
+  margin: 15px;
   width: 320px;
   height: 230px;
   border-top: 3px outset RGB(31, 137, 212);
@@ -408,7 +409,7 @@ body {
   line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(8) {
-  margin: 5px;
+  margin: 15px;
   width: 320px;
   height: 230px;
   border-top: 3px outset RGB(31, 137, 212);
@@ -451,7 +452,7 @@ body {
   line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(9) {
-  margin: 5px;
+  margin: 15px;
   width: 320px;
   height: 230px;
   border-top: 3px outset RGB(31, 137, 212);
@@ -494,7 +495,7 @@ body {
   line-height: 125%;
 }
 #wrapper #bodyContent .innerBox a.pen:nth-child(10) {
-  margin: 5px;
+  margin: 15px;
   width: 320px;
   height: 230px;
   border-top: 3px outset RGB(31, 137, 212);
@@ -536,35 +537,48 @@ body {
   align-items: center;
   line-height: 125%;
 }
-#wrapper #bodyContent + .spacer {
+#wrapper #bodyContent + .spacer,
+#wrapper #otherContent + .spacer,
+#wrapper #footer + .spacer {
   background: url(http://i.imgsafe.org/5e6d523f9b.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position-y: -2vw;
+  background-position-x: center;
+}
+#wrapper #otherContent {
+  height: 30vw;
+  width: 100%;
+  background: RGBA(29, 28, 26, 1);
 }
 #wrapper .spacer {
   height: 25vh;
   width: 100%;
 }
 #wrapper #footer {
-  height: 25vh;
+  min-height: 25vh;
   width: 100%;
   background: RGBA(72, 88, 106, 1);
 }
 #wrapper #footer #links {
   width: 50%;
-  height: 100%;
+  min-height: 25vh;
+  height: auto;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-flow: row wrap;
 }
 #wrapper #footer #links a.fa {
   cursor: pointer;
   width: 12.5%;
+  min-width: 140px;
+  min-height: 70px;
+  margin: 20px 20px 40px 20px;
   padding: 10px 0 10px 0;
-  font-size: calc(7px + 2vw);
+  font-size: 48px;
   text-align: center;
   color: RGB(37, 166, 189);
   border-radius: 10px;
@@ -574,6 +588,18 @@ body {
   border: 6px solid RGBA(106, 105, 104, 1);
   position: relative;
   background: RGBA(72, 88, 106, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  -webkit-animation: text-glow-animation 2s linear infinite;
+  animation: text-glow-animation 2s linear infinite;
+}
+@media (min-width: 340px) and (max-width: 767px) {
+  #wrapper #footer #links a.fa {
+    min-width: 120px;
+    min-height: 50px;
+  }
 }
 #wrapper #footer #links a.fa:hover {
   border-color: RGB(26, 27, 28);
@@ -582,17 +608,19 @@ body {
 #wrapper #footer #links a.fa:hover:after {
   top: calc(-50% - 12px);
   opacity: 1;
+  width: 100%;
+  left: 10%;
 }
 #wrapper #footer #links a.fa:after {
   content: "";
   font-family: "Titillium Web";
   font-weight: 700;
   text-transform: uppercase;
-  width: 100%;
+  width: 80%;
   height: 50%;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 10%;
   background: black;
   opacity: 0;
   font-size: calc(7px + .15vw);
@@ -615,8 +643,84 @@ body {
 #wrapper #footer #links a:nth-child(4):after {
   content: "Follow me on Twitter";
 }
-#wrapper #footer + .spacer {
+#wrapper #footer + .spacer + .spacer {
+  height: 20vw;
   background: RGBA(29, 28, 26, 1);
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#wrapper #footer + .spacer + .spacer #canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#wrapper #footer + .spacer + .spacer #end {
+  color: white;
+  font-variant: small-caps;
+  font-size: calc(7px + 1vw);
+  letter-spacing: 1px;
+}
+#wrapper .scroll {
+  position: absolute;
+  bottom: 30px;
+  left: calc(50% - 11px);
+  height: 36px;
+  width: 22px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-sizing: border-box;
+  z-index: 10;
+  cursor: pointer;
+  transition: opacity .5s ease;
+}
+#wrapper .scroll .hint {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-animation: scroll-hint-animation 2s linear infinite;
+  animation: scroll-hint-animation 2s linear infinite;
+}
+
+@-webkit-keyframes scroll-hint-animation {
+  60% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(14px);
+    transform: translateY(14px);
+  }
+}
+@keyframes scroll-hint-animation {
+  60% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(14px);
+    transform: translateY(14px);
+  }
+}
+@-webkit-keyframes text-glow-animation {
+  0% {
+    text-shadow: 0 0 1px black;
+  }
+  50% {
+    text-shadow: 0 0 1px black, 0 0 2px RGB(37, 166, 189), 0 0 3px white, 0 0 5px RGB(37, 166, 189), 0 0 7px white, 0 0 10px RGB(37, 166, 189);
+  }
+  100% {
+    text-shadow: 0 0 1px black;
+  }
 }
