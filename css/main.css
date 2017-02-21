@@ -30,7 +30,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center -2vw;
+  background-position-y: -2vw;
+  background-position-x: center;
   position: relative;
 }
 #wrapper #landing:after {
@@ -543,7 +544,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center -2vw;
+  background-position-y: -2vw;
+  background-position-x: center;
 }
 #wrapper #otherContent {
   height: 30vw;
@@ -557,17 +559,21 @@ body {
 #wrapper #footer {
   min-height: 25vh;
   width: 100%;
-  background: RGBA(72, 88, 106, 1);
+  position: relative;
+  display: flex;
 }
 #wrapper #footer #links {
   width: 50%;
+  background: RGBA(40, 80, 120, 1);
   min-height: 25vh;
   height: auto;
-  margin: 0 auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-flow: row wrap;
+  z-index: 1;
+  position: relative;
+  box-shadow: 0 0 0 1px black, 0 0 0 2px darkslategrey, 0 0 0 3px black;
 }
 #wrapper #footer #links a.fa {
   cursor: pointer;
@@ -590,8 +596,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
-  -webkit-animation: text-glow-animation 2s linear infinite;
-  animation: text-glow-animation 2s linear infinite;
 }
 @media (min-width: 340px) and (max-width: 767px) {
   #wrapper #footer #links a.fa {
@@ -600,26 +604,28 @@ body {
   }
 }
 #wrapper #footer #links a.fa:hover {
-  border-color: RGB(26, 27, 28);
+  border-color: RGBA(29, 28, 26, 1);
   box-shadow: none;
+  -webkit-animation: text-glow-animation 2s linear infinite;
+  animation: text-glow-animation 2s linear infinite;
 }
 #wrapper #footer #links a.fa:hover:after {
   top: calc(-50% - 12px);
   opacity: 1;
   width: 100%;
-  left: 10%;
+  left: 0%;
 }
 #wrapper #footer #links a.fa:after {
   content: "";
   font-family: "Titillium Web";
   font-weight: 700;
   text-transform: uppercase;
-  width: 80%;
+  width: 60%;
   height: 50%;
   position: absolute;
   top: 0;
-  left: 10%;
-  background: black;
+  left: 20%;
+  background: RGBA(29, 28, 26, 1);
   opacity: 0;
   font-size: calc(7px + .15vw);
   display: flex;
@@ -627,7 +633,8 @@ body {
   align-items: center;
   border-radius: 5px;
   line-height: 125%;
-  transition: top 0.25s cubic-bezier(0, 1.22, 1, 1.67), opacity 0.1s ease;
+  z-index: -1;
+  transition: top 0.25s cubic-bezier(0, 1.22, 1, 1.67), opacity 0.1s ease, left 0.2s ease, width 0.2s ease;
 }
 #wrapper #footer #links a:nth-child(1):after {
   content: "Check out my CodePen";
@@ -640,6 +647,16 @@ body {
 }
 #wrapper #footer #links a:nth-child(4):after {
   content: "Follow me on Twitter";
+}
+#wrapper #footer .side {
+  width: 25%;
+  min-height: 25vh;
+  background: url(http://i.imgsafe.org/5e6d523f9b.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-y: -2vw;
+  background-position-x: center;
 }
 #wrapper #footer + .spacer + .spacer {
   height: 20vw;
@@ -712,6 +729,17 @@ body {
   }
 }
 @-webkit-keyframes text-glow-animation {
+  0% {
+    text-shadow: 0 0 1px black;
+  }
+  50% {
+    text-shadow: 0 0 1px black, 0 0 2px RGB(37, 166, 189), 0 0 3px white, 0 0 5px RGB(37, 166, 189), 0 0 7px white, 0 0 10px RGB(37, 166, 189);
+  }
+  100% {
+    text-shadow: 0 0 1px black;
+  }
+}
+@keyframes text-glow-animation {
   0% {
     text-shadow: 0 0 1px black;
   }
