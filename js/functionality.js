@@ -1,65 +1,87 @@
 //Global Variables
 var mouseHint = document.getElementById("hint"),
+	otTitle = document.getElementById("otTitle"),
 	changeSlide = document.getElementById("changeSlide"),
-	sTop = document.getElementsByClassName("top"),
-	sSide = document.getElementsByClassName("sSide"),
-	sReflection = document.getElementsByClassName("reflection"),
+	sTop = document.getElementById("top"),
+	sSide = document.getElementById("sSide"),
+	reflection = document.getElementById("reflection"),
+	sReflection = document.getElementById("sReflection"),
 	descSlider = document.getElementById("descSlider"),
 	descriptionContainer = document.getElementById("descriptionContainer"),
-		count = 0,
-		clicked = false;
+	count = 1,
+	clicked = false,
+	whichLetter = 0,
+	sSpan = document.getElementsByClassName('otTitleChar').length;
 
-var sImages = ["http://i.imgsafe.org/f0a78699c2.png","http://i.imgsafe.org/f3eab7b3d1.jpg","http://i.imgsafe.org/7661edda62.jpg","http://i.imgsafe.org/bdf8e7832d.jpg"];
+var sImages = ["url(http://i.imgsafe.org/f0a778861b.png)", "url(http://i.imgsafe.org/5c330ca0ef.jpg)", "url(http://i.imgsafe.org/b3e6055c29.jpg)", "url(http://i.imgsafe.org/b3db26691b.jpg)"];
+
+//Used to get random colors
+function getRandomColor() {
+	var letters = '0123456789ABCDEF';
+	var color = '#';
+	for (var i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
+}
+
+//Animate color change on #otTitle
+setInterval(function() {
+	rColor = getRandomColor();
+	if (whichLetter < sSpan + 6) {
+		if (whichLetter > 5) {
+			otTitle.children[(whichLetter - 6)].style.color = 'whitesmoke';
+		}
+		if (whichLetter < sSpan) {
+			otTitle.children[whichLetter].style.color = rColor;
+			var tColor = getRandomColor().toString();
+			otTitle.children[whichLetter].style.textShadow = '0px 0px 10px ' + tColor;
+		}
+		whichLetter++;
+	} else if (whichLetter > sSpan + 5) whichLetter = 0;
+}, 75)
 
 //Scroll animation
 function scrollAnim(elem, eHeight) {
-	if (elem.scrollTop === (elem.scrollHeight - elem.offsetHeight) - 1) {
-		for (var i = elem.scrollHeight; i > 0 ; i--) {
-			setTimeout(function() {
-				elem.scrollTop -= 5;
-			}, i)
-		}
-	} else {
-		for (var i = 0; i < eHeight; i++) {
-			setTimeout(function() {
-				elem.scrollTop += 1.25;
-			}, i)
-		}
-		//console.log((elem.scrollHeight - elem.offsetHeight));
-		//console.log(elem.scrollTop);
-	}
+	slideAnim(count);
+	descSlider.style.top = ((eHeight * -1) * count) + 'px';
+	count++;
+	if (count > 3) count = 0;
 }
 //Changes slides
-function slideAnim(c){
-	
+function slideAnim(c) {
+	sSide.style.backgroundImage = sImages[c];
+	reflection.style.backgroundImage = sImages[c];
+	sReflection.style.backgroundImage = sImages[c];
+	sTop.style.backgroundImage = sImages[c];
 }
 
 //Listener for button click
 changeSlide.addEventListener("click", function() {
-	if(!clicked){
-		clicked = true;
-		var sHeight = descSlider.children[0].offsetHeight;
-	
-		scrollAnim(descriptionContainer, sHeight);
+	var $this = this,
+		sHeight = descriptionContainer.getBoundingClientRect().height;
+	//Disable click
+	$this.style.pointerEvents = "none";
 
+	//Scroll description window
+	scrollAnim(descriptionContainer, sHeight);
 
-		slideAnim(count);
-		setTimeout(function(){
-			clicked = false;
-		},500)
-	}
-	
+	//Enable Click
+	setTimeout(function() {
+		$this.style.pointerEvents = "auto";
+	}, 750)
+
 });
 
 //Remove Scroll Hint
 window.onscroll = function(e) {
-	if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-		mouseHint.style.opacity = '0';
-	} else {
-		mouseHint.style.opacity = '1';
+		if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+			mouseHint.style.opacity = '0';
+		} else {
+			mouseHint.style.opacity = '1';
+		}
 	}
-}
-//Resize functions
-window.onresize = function(){
-	descriptionContainer.scrollTop = 0;
+	//Resize functions
+window.onresize = function() {
+
 };
