@@ -18,6 +18,18 @@ RGB(143,102,143) steel purple
 body {
   overflow-x: hidden;
 }
+body .imgLoader {
+  width: 100vw;
+  height: 50vw;
+  position: absolute;
+  left: -500vw;
+  top: -500vw;
+}
+body .imgLoader img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 
 #wrapper {
   width: 100vw;
@@ -109,11 +121,11 @@ body {
   width: 100%;
   text-align: center;
   color: white;
-  font-size: calc(10px + 2vw);
+  font-size: calc(10px + 1.75vw);
   padding: 10px 10px 75px 10px;
   margin-top: 2.5%;
   text-transform: capitalize;
-  font-family: 'Oswald';
+  font-family: 'Titillium Web';
   font-variant: small-caps;
 }
 #wrapper #bodyContent .innerBox {
@@ -516,14 +528,10 @@ body {
   align-items: center;
   line-height: 125%;
 }
-#wrapper #bodyContent + .spacer,
-#wrapper #otherContent + .spacer,
-#wrapper #footer + .spacer {
+#wrapper #footer {
   position: relative;
 }
-#wrapper #bodyContent + .spacer::before,
-#wrapper #otherContent + .spacer::before,
-#wrapper #footer + .spacer::before {
+#wrapper #footer::before {
   display: block;
   content: "";
   position: fixed;
@@ -557,17 +565,39 @@ body {
   flex-flow: row wrap;
   align-items: center;
 }
+#wrapper #otherContent #otTitle {
+  width: 100%;
+  display: block;
+  height: 10%;
+  text-align: center;
+  color: whitesmoke;
+  line-height: 150%;
+  text-transform: capiltalize;
+  font-family: "Bahiana";
+  font-size: calc(5px + 2.5vw);
+}
+#wrapper #otherContent #otTitle span {
+  transition: all .1s ease;
+  margin: .5px;
+}
+#wrapper #otherContent #otTitle span:nth-child(3), #wrapper #otherContent #otTitle span:nth-child(8), #wrapper #otherContent #otTitle span:nth-child(13), #wrapper #otherContent #otTitle span:nth-child(14), #wrapper #otherContent #otTitle span:nth-child(17), #wrapper #otherContent #otTitle span:nth-child(22) {
+  margin-right: 15px;
+}
 #wrapper #otherContent #descriptionContainer {
   width: 380px;
   height: 500px;
   overflow: hidden;
   transition: all .3s ease;
   margin: 0 auto;
+  position: relative;
+  z-index: 5;
 }
 #wrapper #otherContent #descriptionContainer #descSlider {
   width: 100%;
   height: 400%;
   color: whitesmoke;
+  position: relative;
+  transition: top .3s linear;
 }
 #wrapper #otherContent #descriptionContainer #descSlider .desc {
   height: 25%;
@@ -595,12 +625,13 @@ body {
   height: calc(72.5% - 2vw);
   width: calc(80% - 2vw);
   margin: 10% auto;
-  box-shadow: 0 0 2px whitesmoke;
+  box-shadow: inset 0 0 3px 1px whitesmoke;
   border-radius: 5px;
   padding: 1vw;
   line-height: 18px;
   text-align: justify;
   font-family: "Titillium Web";
+  text-indent: 35px;
 }
 #wrapper #otherContent #changeSlide {
   width: 150px;
@@ -609,92 +640,73 @@ body {
   cursor: pointer;
   margin: 0 auto;
   margin-left: -30%;
+  position: relative;
+  z-index: 5;
 }
-#wrapper #otherContent .box {
+#wrapper #otherContent #box {
   position: relative;
   width: 65%;
   margin: 5% auto;
   padding-bottom: 25%;
-  transform: rotateY(29deg) translate3d(-5vw, -2.5vw, -30vw);
+  transform: rotateY(40deg) translate3d(10vw, -2.5vw, -25vw);
   transform-style: preserve-3d;
 }
 @media (min-width: 340px) and (max-width: 767px) {
-  #wrapper #otherContent .box {
+  #wrapper #otherContent #box {
     display: none;
   }
 }
-#wrapper #otherContent .box div.top {
+#wrapper #otherContent #box * {
+  transition: background-image .5s ease;
+}
+#wrapper #otherContent #box #top {
   position: absolute;
   top: 0;
-  width: 30.3%;
-  height: 100%;
-  float: left;
-  background-image: url("http://i.imgsafe.org/f0a78699c2.png");
-  background-size: auto 100%;
-  transform-style: preserve-3d;
-  outline: 1px solid transparent;
-  -webkit-backface-visibility: hidden !important;
-  /* prevent jagged edges in firefox */
-  -webkit-animation: changeIt 25s infinite;
-  /* Safari 4.0 - 8.0 */
-  animation: changeIt 25s infinite;
-}
-#wrapper #otherContent .box div.top:before {
-  content: "";
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(26, 188, 156, 0.15);
+  float: left;
+  background-image: url(http://i.imgsafe.org/f0a778861b.png);
+  background-size: 125% 100%;
+  background-position: 100% 0;
+  background-repeat: no-repeat;
 }
-#wrapper #otherContent .box .left {
-  left: 0;
-  background-position: 0% 0;
-}
-#wrapper #otherContent .box .center {
-  left: 34.83%;
-  background-position: -100% 0;
-}
-#wrapper #otherContent .box .right {
-  left: 69.66%;
-  background-position: -197% 0;
-}
-#wrapper #otherContent .box div.top > .sSide {
-  content: '';
+#wrapper #otherContent #box #top #sSide {
   position: absolute;
   top: 0;
   right: 100%;
-  width: 10%;
+  width: 25%;
   height: 100%;
-  background: url("http://i.imgsafe.org/f0a78699c2.png");
-  background-size: auto 100%;
+  background-image: url(http://i.imgsafe.org/f0a778861b.png);
+  background-size: 500% 100%;
   transform-origin: 100% 50%;
   transform: rotateY(-90deg);
-  -webkit-backface-visibility: hidden !important;
-  -webkit-animation: changeIt 25s infinite;
-  /* Safari 4.0 - 8.0 */
-  animation: changeIt 25s infinite;
+  background-position: 0% 0;
+  transform-style: preserve-3d;
 }
-#wrapper #otherContent .box div.top > .sSide:before {
-  content: "";
+#wrapper #otherContent #box #top #sSide #sReflection {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  transform: rotateX(-90deg);
+  transform-origin: 50% 100%;
+  background-image: url("http://i.imgsafe.org/f0a778861b.png");
+  background-size: 500% 100%;
+  background-position: 0% 0;
+  outline: 1px solid transparent;
+}
+#wrapper #otherContent #box #top #sSide #sReflection:before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(26, 188, 156, 0.15);
+  width: 100%;
+  height: 99.7%;
+  background: linear-gradient(180deg, RGBA(29, 28, 26, 1) 0%, RGBA(29, 28, 26, 0.6) 123%);
+  outline: 15px solid RGBA(29, 28, 26, 1);
 }
-#wrapper #otherContent .box .left > .sSide {
-  background-position: 0% 0;
-}
-#wrapper #otherContent .box .center > .sSide {
-  background-position: -798% 0px !important;
-}
-#wrapper #otherContent .box .right > .sSide {
-  background-position: -2000.4% 0 !important;
-}
-#wrapper #otherContent .box div.top .reflection {
+#wrapper #otherContent #box #top #reflection {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -702,66 +714,77 @@ body {
   height: 100%;
   transform-origin: 50% 100%;
   transform: rotateX(-90deg);
-  background-image: url("http://i.imgsafe.org/f0a78699c2.png");
-  background-size: auto 100%;
-  outline: 1px solid transparent;
-  -webkit-animation: changeIt 25s infinite;
-  /* Safari 4.0 - 8.0 */
-  animation: changeIt 25s infinite;
-}
-#wrapper #otherContent .box .left > .reflection {
+  background-image: url(http://i.imgsafe.org/f0a778861b.png);
+  background-size: 125% 100%;
   left: 0;
-  background-position: 0% 0;
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  outline: 1px solid transparent;
 }
-#wrapper #otherContent .box .center > .reflection {
-  left: 34.83%;
-  background-position: -100% 0;
-}
-#wrapper #otherContent .box .right > .reflection {
-  left: 69.66%;
-  background-position: -197% 0;
-}
-#wrapper #otherContent .box .overlay {
+#wrapper #otherContent #box #top #overlay {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 99.7%;
+  height: 100%;
   transform-origin: 50% 100%;
   transform: rotateX(-90deg);
   background: linear-gradient(180deg, RGBA(29, 28, 26, 1) 0%, RGBA(29, 28, 26, 0.6) 123%);
-  outline: 15px solid RGBA(29, 28, 26, 1);
+  outline: 1px solid transparent;
 }
 #wrapper .spacer {
   height: 25vh;
   width: 100%;
 }
 #wrapper #footer {
-  min-height: 25vh;
+  min-height: 75vh;
   width: 100%;
   position: relative;
   display: flex;
 }
 #wrapper #footer #links {
   width: 50%;
-  background: RGBA(40, 80, 120, 1);
-  min-height: 25vh;
+  background: RGBA(29, 28, 26, 1);
+  min-height: 27.5vh;
   height: auto;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
   flex-flow: row wrap;
   z-index: 1;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   box-shadow: 0 0 0 1px black, 0 0 0 2px darkslategrey, 0 0 0 3px black;
+  border-radius: 5px;
+}
+#wrapper #footer #links #canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+#wrapper #footer #links #end {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-variant: small-caps;
+  font-size: calc(7px + 1vw);
+  letter-spacing: 1px;
+  padding: 10px 0 10px 0;
 }
 #wrapper #footer #links a.fa {
   cursor: pointer;
   width: 12.5%;
   min-width: 140px;
   min-height: 70px;
-  margin: 20px 20px 40px 20px;
+  margin: 20px 20px 80px 20px;
   padding: 10px 0 10px 0;
   font-size: 48px;
   text-align: center;
@@ -795,6 +818,7 @@ body {
   opacity: 1;
   width: 100%;
   left: 0%;
+  text-shadow: none;
 }
 #wrapper #footer #links a.fa:after {
   content: "";
@@ -806,7 +830,7 @@ body {
   position: absolute;
   top: 0;
   left: 20%;
-  background: RGBA(29, 28, 26, 1);
+  background: RGBA(40, 80, 120, 1);
   opacity: 0;
   font-size: calc(7px + .15vw);
   display: flex;
@@ -817,16 +841,16 @@ body {
   z-index: -1;
   transition: top 0.25s cubic-bezier(0, 1.22, 1, 1.67), opacity 0.1s ease, left 0.2s ease, width 0.2s ease;
 }
-#wrapper #footer #links a:nth-child(1):after {
+#wrapper #footer #links a:nth-child(3):after {
   content: "Checkout my CodePen";
 }
-#wrapper #footer #links a:nth-child(2):after {
+#wrapper #footer #links a:nth-child(4):after {
   content: "Browse my GitHub";
 }
-#wrapper #footer #links a:nth-child(3):after {
+#wrapper #footer #links a:nth-child(5):after {
   content: "Let's connect on LinkedIn";
 }
-#wrapper #footer #links a:nth-child(4):after {
+#wrapper #footer #links a:nth-child(6):after {
   content: "Follow me on Twitter";
 }
 #wrapper #footer .side {
@@ -858,29 +882,6 @@ body {
   background-color: RGBA(29, 28, 26, 1);
   background-position-y: -2vw;
   background-position-x: center;
-}
-#wrapper #footer + .spacer + .spacer {
-  height: 20vw;
-  background: RGBA(29, 28, 26, 1);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#wrapper #footer + .spacer + .spacer #canvas {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-#wrapper #footer + .spacer + .spacer #end {
-  color: white;
-  font-variant: small-caps;
-  font-size: calc(7px + 1vw);
-  letter-spacing: 1px;
 }
 #wrapper .scroll {
   position: absolute;
