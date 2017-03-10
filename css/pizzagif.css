@@ -1,19 +1,35 @@
-#wrapper {
+body {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
+  background: -webkit-radial-gradient(bottom ellipse, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+body #wrapper {
+  width: 95vw;
+  height: 100vh;
   position: relative;
+  left: 2.5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
-#wrapper .gif {
-  max-width: 25%;
-  max-height: 320px;
+body #wrapper .gif {
+  width: 16.6667vw;
+  height: 16.6667vw;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 225px;
+  max-height: 225px;
+  margin: 0;
+  padding: 0;
+  background-size: 120% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
