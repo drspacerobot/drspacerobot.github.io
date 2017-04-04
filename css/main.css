@@ -20,12 +20,12 @@ body{
 		}
 		#drsr{
 			border-radius:50%;
-			max-width:50vw;
+			max-width:40vw;
 		}
 		h1{
 			width:100%;
 			position:absolute;
-			bottom:2.5%;
+			bottom:3%;
 			display:flex;
 			justify-content:center;
 			align-items:center;
