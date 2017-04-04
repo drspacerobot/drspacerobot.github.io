@@ -16,7 +16,8 @@ body{
 			left:0;
 			justify-content:center;
 			align-items:center;
-			background:rgba(50,50,50,.7);
+			background: -webkit-radial-gradient(bottom ellipse, #1b2735 0%, #090a0f 100%);
+ 			 background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 		}
 		#drsr{
 			border-radius:50%;
@@ -32,4 +33,42 @@ body{
 			font-size:4vw;
 			color:silver;
 			font-variant:small-caps;
+		}
+		.gif {
+		  border-radius: 10px;
+		  background-size: 100% 100%;
+		  background-repeat: no-repeat;
+		  background-position: center center;
+		  box-shadow: 0 0 3px black;
+		  position: absolute;
+		  top: inherit;
+		  left: inherit;
+		}
+		.random {
+		  -webkit-animation: glow .7s infinite;
+			  animation: glow .7s infinite;
+		}
+
+		@-webkit-keyframes glow {
+		  0% {
+		    box-shadow: 0 0 .5vw firebrick;
+		  }
+		  50% {
+		    box-shadow: 0 0 1.5vw firebrick, 0 0 1.75vw darkorange;
+		  }
+		  100% {
+		    box-shadow: 0 0 .5vw firebrick;
+		  }
+		}
+
+		@keyframes glow {
+		  0% {
+		    box-shadow: 0 0 .5vw firebrick;
+		  }
+		  50% {
+		    box-shadow: 0 0 1.5vw firebrick, 0 0 1.75vw darkorange;
+		  }
+		  100% {
+		    box-shadow: 0 0 .5vw firebrick;
+		  }
 		}
