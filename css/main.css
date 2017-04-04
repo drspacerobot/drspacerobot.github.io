@@ -4,7 +4,7 @@ body{
 			background: url(https://media.giphy.com/media/a4TTyxVWxfEWY/giphy.gif);
 			background-repeat:no-repeat;
 			background-size:100% 100%;
-			overflow-x:hidden;
+			overflow:hidden;
 		}
 		#wrapper{
 			width:100vw;
