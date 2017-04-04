@@ -51,24 +51,24 @@ body{
 
 		@-webkit-keyframes glow {
 		  0% {
-		    box-shadow: 0 0 .5vw firebrick;
+		    box-shadow: 0 0 .5vw green;
 		  }
 		  50% {
-		    box-shadow: 0 0 1.5vw firebrick, 0 0 1.75vw darkorange;
+		    box-shadow: 0 0 1.5vw green, 0 0 1.75vw darkorange;
 		  }
 		  100% {
-		    box-shadow: 0 0 .5vw firebrick;
+		    box-shadow: 0 0 .5vw green;
 		  }
 		}
 
 		@keyframes glow {
 		  0% {
-		    box-shadow: 0 0 .5vw firebrick;
+		    box-shadow: 0 0 .5vw green;
 		  }
 		  50% {
-		    box-shadow: 0 0 1.5vw firebrick, 0 0 1.75vw darkorange;
+		    box-shadow: 0 0 1.5vw green, 0 0 1.75vw darkorange;
 		  }
 		  100% {
-		    box-shadow: 0 0 .5vw firebrick;
+		    box-shadow: 0 0 .5vw green;
 		  }
 		}
