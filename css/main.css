@@ -16,7 +16,7 @@ body{
 			left:0;
 			justify-content:center;
 			align-items:center;
- 			background: radial-gradient(ellipse at bottom, rgba(#1b2735,.5) 0%, rgba(#090a0f,.5) 100%);
+ 			background: radial-gradient(ellipse at bottom, rgba(27,39,53,.5) 0%, rgba(9,10,15,.5) 100%);
 		}
 		#drsr{
 			border-radius:50%;
