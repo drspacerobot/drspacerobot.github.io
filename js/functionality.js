@@ -14,7 +14,7 @@ var wrapper = document.getElementById('wrapper');
 		seconds = (Math.floor(Math.random() * 5) + 8);
 		console.log(seconds);
 	//When equal I use the giphy api to return a random #pizza gif.
-		q = "space+funny"; // search query
+		q = "space+arnold"; // search query
 
 		request = new XMLHttpRequest;
 		request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + q, true);
